@@ -10,6 +10,8 @@
   //All special characters
   var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "`", "{", "|", "}", "~", "_", "[", "]", "^"];
 
+  // Empty array
+  var completeArray = [];
 
 // STAGE 1—— Initial prompts
 
@@ -50,16 +52,12 @@
     }   
   } while ((passwordLength > 128) || (passwordLength < 8));
 
-  
-// STAGE 2—— Randomly selecting the password components
 
-
-
-
-
-
-
-
+function addToArray(a) {
+  if (a === true) {
+    var complete = completeArray.concat(a);
+  }
+}
 
 
 
