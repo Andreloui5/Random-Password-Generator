@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-2i5iue4huuh6IFYfutZmVqdWHLOnc+2k9geOaCE1L0Z4JMIGRGuqbwb/epCIOgVp" crossorigin="anonymous">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="wrapper">
+    <!-- Container Div  -->
+    <div class="container">
       <!-- Header  -->
-      <header>
-        <h1>Password Generator</h1>
+      <header class="row m-5">
+        <h1 class="col text-center font-weight-bold">Password Generator</h1>
       </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+      <!-- Card -->
+      <div class="card border rounded row m-2">
+        <div class="card-header col">
+          <h2 class="p-2">Generate a Password</h2>
         </div>
         <!-- Text Area -->
-        <div class="card-body">
-          <textarea
+        <div class="card-body row wrapper">
+          <textarea class="col"
             readonly
             id="password"
             placeholder="Your Secure Password"
@@ -28,10 +32,13 @@
         </div>
         <!-- Password button  -->
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-          <button disabled id="copy" class="btn float right">Copy to Clipboard</button>
+          <div class="text-center">
+          <button id="generate" class="btn btn-primary m-1 p-2">Generate Password</button>
+          <button disabled id="copy" class="btn float right btn-success m-1 p-2">Copy to Clipboard</button>
+          </div>
         </div>
       </div>
+    <!-- End Container -->
     </div>
     <script src="script.js"></script>
   </body>
