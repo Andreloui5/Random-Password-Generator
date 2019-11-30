@@ -10,6 +10,40 @@ var numericCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 //All special characters
 var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "`", "{", "|", "}", "~", "_", "[", "]", "^"];
 
+
+// STAGE 1—— Initial prompts
+
+// Lowercase letter confirm
+var lowercaseConfirm = confirm("Would you like your password to contain lowercase letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+  console.log(lowercaseConfirm);
+}
+// Capital letter confirm
+var capitalConfirm = confirm("Would you like your password to contain capital letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+  console.log(capitalConfirm);
+}
+// Numeric character confirm
+var numeralConfirm = confirm("Would you like your password to contain numeric characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+  console.log(numeralConfirm);
+}
+// Special character confirm
+var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+  console.log(capitalConfirm);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
