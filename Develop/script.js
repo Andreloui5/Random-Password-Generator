@@ -13,23 +13,28 @@ var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", 
 
 // STAGE 1—— Initial prompts
 
-// Lowercase letter confirm
-var lowercaseConfirm = confirm("Would you like your password to contain lowercase letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-  console.log(lowercaseConfirm);
-}
-// Capital letter confirm
-var capitalConfirm = confirm("Would you like your password to contain capital letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-  console.log(capitalConfirm);
-}
-// Numeric character confirm
-var numeralConfirm = confirm("Would you like your password to contain numeric characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-  console.log(numeralConfirm);
-}
-// Special character confirm
-var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-  console.log(capitalConfirm);
-}
-
+// This DO loop ensures that at least one type of character is chosen.
+do {
+  // Lowercase letter confirm
+  var lowercaseConfirm = confirm("Would you like your password to contain lowercase letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+    console.log(lowercaseConfirm);
+  }
+  // Capital letter confirm
+  var capitalConfirm = confirm("Would you like your password to contain capital letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+    console.log(capitalConfirm);
+  }
+  // Numeric character confirm
+  var numeralConfirm = confirm("Would you like your password to contain numeric characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+    console.log(numeralConfirm);
+  }
+  // Special character confirm
+  var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+    console.log(specialConfirm);
+  }
+    if ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false)){
+      alert("Passwords must include at least one type of character. \nPlease review the options again, and select the types of characters you would like to include.");
+    }
+} while ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false))
 
 
 
