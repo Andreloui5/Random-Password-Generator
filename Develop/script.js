@@ -53,11 +53,22 @@
   } while ((passwordLength > 128) || (passwordLength < 8));
 
 
-function addToArray(a) {
+function addToArray (a, b, c, d, e, f, g, h) {
   if (a === true) {
-    var complete = completeArray.concat(a);
+    completeArray.concat(b);
+  }
+  if (c === true) {
+    completeArray.concat(d);
+  }
+  if (e === true) {
+    completeArray.concat(f);
+  }
+  if (g === true) {
+    completeArray.concat(h);
   }
 }
+
+
 
 
 
