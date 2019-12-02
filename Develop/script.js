@@ -15,7 +15,7 @@
   var finalArray = [];
   
   // Final Password
-  var password = "";
+  var userPassword = "";
 
 // STAGE 1—— Initial prompts
 
@@ -37,9 +37,12 @@
     var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
       console.log(specialConfirm);
     }
+
+    // Error message that occurs when user fails to select any characters.
       if ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false)) {
         alert("Passwords must include at least one type of character. \nPlease review the options again, and select the types of characters you would like to include.");
       }
+      
   } while ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false));
 
   // This do loop ensures that a valid password length is chosen.
@@ -75,14 +78,13 @@ function addToArray (a, b, c, d, e, f, g, h) {
     completeArray.push(h)
   }
 }
-
+//adding in our variables (a,b= lowercase, c,d=Capital, e,f= numerals, and g,h= special)
 addToArray(lowercaseConfirm, lowercaseLetters, capitalConfirm, capitalLetters, numeralConfirm, numericCharacters, specialConfirm, specialCharacters)
 
+//for loop that genreates the user's password
 for (let index = 0; index < passwordLength; index++) {
-  password = password + finalArray[Math.floor(Math.random() * Math.floor(finalArray.length-1))];
+  userPassword = userPassword + finalArray[Math.floor(Math.random() * Math.floor(finalArray.length-1))];
 }
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
