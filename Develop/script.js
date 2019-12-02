@@ -17,75 +17,81 @@
   // Final Password
   var userPassword = "";
 
-// STAGE 1—— Initial prompts
 
-  // This do loop ensures that at least one type of character is chosen.
-  do {
-    // Lowercase letter confirm
-    var lowercaseConfirm = confirm("Would you like your password to contain lowercase letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-      console.log(lowercaseConfirm);
-    }
-    // Capital letter confirm
-    var capitalConfirm = confirm("Would you like your password to contain capital letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-      console.log(capitalConfirm);
-    }
-    // Numeric character confirm
-    var numeralConfirm = confirm("Would you like your password to contain numeric characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-      console.log(numeralConfirm);
-    }
-    // Special character confirm
-    var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
-      console.log(specialConfirm);
-    }
+function generatePassword() {
+  // STAGE 1—— Initial prompts
 
-    // Error message that occurs when user fails to select any characters.
-      if ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false)) {
-        alert("Passwords must include at least one type of character. \nPlease review the options again, and select the types of characters you would like to include.");
+    // This do loop ensures that at least one type of character is chosen.
+    do {
+      // Lowercase letter confirm
+      var lowercaseConfirm = confirm("Would you like your password to contain lowercase letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+        console.log(lowercaseConfirm);
       }
-      
-  } while ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false));
+      // Capital letter confirm
+      var capitalConfirm = confirm("Would you like your password to contain capital letters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+        console.log(capitalConfirm);
+      }
+      // Numeric character confirm
+      var numeralConfirm = confirm("Would you like your password to contain numeric characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+        console.log(numeralConfirm);
+      }
+      // Special character confirm
+      var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
+        console.log(specialConfirm);
+      }
 
-  // This do loop ensures that a valid password length is chosen.
-  do {
-    // Ask the user how many characters they would like in the password.
-    var userPasswordLength = prompt ("How long would you like your password to be? \nPlease select a number between 8 and 128");
-    // Makes sure that user input is interpreted as a number.
-    var passwordLength = parseInt(userPasswordLength); {
-      console.log(passwordLength);
+      // Error message that occurs when user fails to select any characters.
+        if ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false)) {
+          alert("Passwords must include at least one type of character. \nPlease review the options again, and select the types of characters you would like to include.");
+        }
+
+    } while ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false));
+
+    // This do loop ensures that a valid password length is chosen.
+    do {
+      // Ask the user how many characters they would like in the password.
+      var userPasswordLength = prompt ("How long would you like your password to be? \nPlease select a number between 8 and 128");
+      // Makes sure that user input is interpreted as a number.
+      var passwordLength = parseInt(userPasswordLength); {
+        console.log(passwordLength);
+      }
+      //Correct if desired password length is invalid.
+      if ((passwordLength > 128) || (passwordLength < 8)) {
+        alert("Passwords must be between 8 and 128 characters in length. \nWhen prompted, please enter a valid number.");
+      }   
+    } while ((passwordLength > 128) || (passwordLength < 8));
+
+
+  // STAGE 2- adding user selections together
+  //Function that adds user-selected parameters to finalArray.
+  function addToArray (a, b, c, d, e, f, g, h) {
+    if (a === true) {
+      finalArray = finalArray.concat(b)
+      completeArray.push(b)
     }
-    //Correct if desired password length is invalid.
-    if ((passwordLength > 128) || (passwordLength < 8)) {
-      alert("Passwords must be between 8 and 128 characters in length. \nWhen prompted, please enter a valid number.");
-    }   
-  } while ((passwordLength > 128) || (passwordLength < 8));
+    if (c === true) {
+      finalArray = finalArray.concat(d)
+      completeArray.push(d)
+    }
+    if (e === true) {
+      finalArray = finalArray.concat(f)
+      completeArray.push(f)
+    }
+    if (g === true) {
+      finalArray = finalArray.concat(h)
+      completeArray.push(h)
+    }
+  }
+  //adding in our variables (a,b= lowercase, c,d=Capital, e,f= numerals, and g,h= special)
+  addToArray(lowercaseConfirm, lowercaseLetters, capitalConfirm, capitalLetters, numeralConfirm, numericCharacters, specialConfirm, specialCharacters)
 
-//Created function to add user-selected parameters to completeArray.
-function addToArray (a, b, c, d, e, f, g, h) {
-  if (a === true) {
-    finalArray = finalArray.concat(b)
-    completeArray.push(b)
+
+  // STAGE 3- loop that genreates the user's password
+  for (let index = 0; index < passwordLength; index++) {
+    userPassword = userPassword + finalArray[Math.floor(Math.random() * (finalArray.length-1))];
   }
-  if (c === true) {
-    finalArray = finalArray.concat(d)
-    completeArray.push(d)
-  }
-  if (e === true) {
-    finalArray = finalArray.concat(f)
-    completeArray.push(f)
-  }
-  if (g === true) {
-    finalArray = finalArray.concat(h)
-    completeArray.push(h)
-  }
+  console.log(userPassword)
 }
-//adding in our variables (a,b= lowercase, c,d=Capital, e,f= numerals, and g,h= special)
-addToArray(lowercaseConfirm, lowercaseLetters, capitalConfirm, capitalLetters, numeralConfirm, numericCharacters, specialConfirm, specialCharacters)
-
-//for loop that genreates the user's password
-for (let index = 0; index < passwordLength; index++) {
-  userPassword = userPassword + finalArray[Math.floor(Math.random() * Math.floor(finalArray.length-1))];
-}
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
