@@ -10,9 +10,12 @@
   //All special characters
   var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "`", "{", "|", "}", "~", "_", "[", "]", "^"];
 
-  // Empty array
+  // Empty arrays
   var completeArray = [];
   var finalArray = [];
+  
+  // Final Password
+  var password = "";
 
 // STAGE 1—— Initial prompts
 
@@ -74,6 +77,12 @@ function addToArray (a, b, c, d, e, f, g, h) {
 }
 
 addToArray(lowercaseConfirm, lowercaseLetters, capitalConfirm, capitalLetters, numeralConfirm, numericCharacters, specialConfirm, specialCharacters)
+
+for (let index = 0; index < passwordLength; index++) {
+  password = password + finalArray[Math.floor(Math.random() * Math.floor(finalArray.length-1))];
+}
+
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
