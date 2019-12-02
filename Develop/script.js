@@ -12,6 +12,7 @@
 
   // Empty array
   var completeArray = [];
+  var finalArray = [];
 
 // STAGE 1—— Initial prompts
 
@@ -52,26 +53,27 @@
     }   
   } while ((passwordLength > 128) || (passwordLength < 8));
 
-
+//Created function to add user-selected parameters to completeArray.
 function addToArray (a, b, c, d, e, f, g, h) {
   if (a === true) {
-    completeArray.concat(b);
+    finalArray = finalArray.concat(b)
+    completeArray.push(b)
   }
   if (c === true) {
-    completeArray.concat(d);
+    finalArray = finalArray.concat(d)
+    completeArray.push(d)
   }
   if (e === true) {
-    completeArray.concat(f);
+    finalArray = finalArray.concat(f)
+    completeArray.push(f)
   }
   if (g === true) {
-    completeArray.concat(h);
+    finalArray = finalArray.concat(h)
+    completeArray.push(h)
   }
 }
 
-
-
-
-
+addToArray(lowercaseConfirm, lowercaseLetters, capitalConfirm, capitalLetters, numeralConfirm, numericCharacters, specialConfirm, specialCharacters)
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
