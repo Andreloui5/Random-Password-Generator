@@ -39,12 +39,10 @@ function generatePassword() {
       var specialConfirm = confirm("Would you like your password to contain special characters? \nPlease select 'ok' for yes, and 'cancel' for no."); {
         console.log(specialConfirm);
       }
-
       // Error message that occurs when user fails to select any characters.
         if ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false)) {
           alert("Passwords must include at least one type of character. \nPlease review the options again, and select the types of characters you would like to include.");
         }
-
     } while ((lowercaseConfirm === false) && (capitalConfirm === false) && (numeralConfirm === false) && (specialConfirm === false));
 
     // This do loop ensures that a valid password length is chosen.
@@ -92,6 +90,7 @@ function generatePassword() {
   }
   console.log(userPassword)
 }
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -100,17 +99,30 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = userPassword;
 
   copyBtn.removeAttribute("disabled");
   copyBtn.focus();
 }
 
-function copyToClipboard() {
-  // BONUS 
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
+function copyToClipboard() {
+   /* Get the text field */
+   var copyText = document.getElementById("copyBtn");
+
+   /* Select the text field */
+   password.select();
+   password.setSelectionRange(0, 99999); /*For mobile devices*/
+ 
+   /* Copy the text inside the text field */
+   document.execCommand("copy");
+ 
+   /* Alert the copied text */
+   alert("Copied the text: " + password.value + " to the clipboard.");
+}
+
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click", copyToClipboard);
