@@ -1,8 +1,50 @@
 * {
     font-family: 'Lato', sans-serif;
+    color: #OBOO33;
 }
 
 .container {
     width: 675px;
     height: auto;
+}
+
+body { 
+    background: url(/images/cream_dust\ 8.18.07\ PM.png);
+}
+
+/* Header font- Roboto */
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Slight box-shadow to card */
+.card {
+    box-shadow: 0 15px 20px -10px #cccccc;
+    background-color: white;
+}
+
+/* Generate Button effects */
+#generate {
+    background-color: #605770;
+    box-shadow: 0 15px 20px -10px #ccc;
+}
+
+#generate:hover {
+    box-shadow: 0 5px 11px 0 #cccccc, 0 4px 15px 0 #cccccc;
+}
+
+/* Copy to Clipboard Button effects */
+#copyBtn {
+    background-color: #9E7682;
+    box-shadow: 0 15px 20px -10px #ccc;
+}
+
+#copyBtn:focus {
+    background-color: #EDCB96;
+    box-shadow: 0 15px 20px -10px #ccc;
+}
+
+/* Hover effect only after copy button is enabled */
+#copyBtn:hover:enabled {
+    box-shadow: 0 5px 11px 0 #cccccc, 0 4px 15px 0 #cccccc;
 }
