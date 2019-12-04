@@ -6,7 +6,7 @@ This application is designed to generate a randomized password. The user is prom
 
 I wanted to keep this application exceedingly minmal. To do this, I only included two buttons on the page— one to generate the password, and another to copy the password to the clipboard.
 
-![Password Generator UI](images/Screen Shot 2019-12-04 at 5.26.29 PM.png "UI for Password Generator")
+![Password Generator UI](https://github.com/Andreloui5/Random-Password-Generator/blob/master/images/Screen%20Shot%202019-12-04%20at%205.26.29%20PM.png?raw=true "UI for Password Generator")
 
 ## Technologies
 
